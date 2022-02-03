@@ -15,7 +15,7 @@ class CountrySerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Country
-        fields = ('id', 'name', 'photo_url', 'country_url',)
+        fields = ('id', 'name', 'photo_url', 'destinations', 'country_url',)
 
 
 class DestinationSerializer(serializers.HyperlinkedModelSerializer):
