@@ -1,14 +1,13 @@
 <template>
     <div>
         <h1>this is Home</h1>
-
-        <div>
-            <div>
+        <div :key="e.id" v-for="e in trips">
+            <div @click="selectTrip(e.id)">
                 <div>
-                    <img :src="this.trips[0].photo_url" :alt="this.trips[0].name" width="500px">
+                    <img :src="e.photo_url" :alt="e.name" width="500px">
                 </div>
                 <div>
-                    <h3>{{this.trips[0].name}}</h3>
+                    <h3>{{e.name}}</h3>
                 </div>
             </div>
         </div>
@@ -23,6 +22,7 @@
 import axios from 'axios'
 
 const BASE_URL = 'http://localhost:8080'
+
 
 export default {
     name: 'Home',
