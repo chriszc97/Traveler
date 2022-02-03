@@ -11,7 +11,7 @@ class Country(models.Model):
         return self.name
 
 
-class Location(models.Model):
+class Destination(models.Model):
      country= models.ForeignKey(Country, on_delete=models.CASCADE, related_name='destinatoin')
      name = models.CharField(max_length=100)
      photo_url = models.TextField(blank=True)
