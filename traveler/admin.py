@@ -3,8 +3,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Country
-from .models import Destination
+from .models import Country, Destination
 
 admin.site.register(Country)
 admin.site.register(Destination)

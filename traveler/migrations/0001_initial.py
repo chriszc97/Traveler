@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                 ('food', models.CharField(max_length=100)),
                 ('landmarks', models.CharField(max_length=100)),
                 ('cost', models.CharField(max_length=100)),
-                ('country', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='destinatoin', to='traveler.country')),
+                ('country', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='destination', to='traveler.country')),
             ],
         ),
     ]
