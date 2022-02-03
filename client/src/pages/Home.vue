@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h1>this is Home</h1>
+        <h1>Travel Posts</h1>
         <div class='post'>
-            <DestinationPost :trip='trip' :key='trip.id' v-for='trip in trips'/>
+            <DestinationPost :trip='trip' :key='trip.id' v-for='trip in trips' @selectTrip="selectTrip"/>
         
-        </div>
+    </div> 
     </div>
     
 </template>
@@ -17,6 +17,7 @@ import axios from 'axios'
 import DestinationPost from '../components/DestinationoPost.vue'
 
 const BASE_URL = 'http://localhost:8080'
+
 
 export default {
     name: 'Home',

@@ -2,7 +2,7 @@
   <div class="post" @click="selectTheTrip(trip.id)">   
     <h2>Name:{{trip.name}} </h2> 
     <img :src='trip.photo_url' alt="" />
-    <p>description: {{trip.description}}</p>
+    <h3>Location: {{trip.destinations.name}}</h3>
   </div>
 
 </template>
@@ -15,9 +15,6 @@ export default{
   methods: {
     selectTheTrip(){
       this.$emit('selectTrip', this.trip.id)
-    },
-    click(){
-      console.log('hello')
     }
 
   }
