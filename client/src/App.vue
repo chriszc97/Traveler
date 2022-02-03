@@ -3,9 +3,9 @@
     <Nav />
     <DestinationPost />
     <DestinationDetails />
-
-
-    
+     <router-view> 
+        
+      </router-view>
   </div> 
 </template>
 
