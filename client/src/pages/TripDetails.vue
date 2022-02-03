@@ -27,6 +27,10 @@
 
 
 <script>
+import axios from 'axios'
+
+const BASE_URL = 'http://localhost:8080'
+
 export default {
     name: 'MyTrip',
     props: {
@@ -52,7 +56,10 @@ export default {
 
     },
     methods: {
-
+        async getTrip(){
+            const response = await axios.get(`${BASE_URL}/${''}`)
+            this.trips = response.data
+        }
     }
 }
 </script>
