@@ -1,0 +1,15 @@
+{% extends 'traveler/base.html' %} {% block content %}
+<h2>{{ country.name }} <a href="">(edit)</a></h2>
+<h4>{{ decade.start_year }}</h4>
+
+<img src="{{ deacde.photo_url }}" alt="" class="decade-photo" />
++ <a href="{% url 'decade_delete' pk=decade.pk %}">Delete</a>
+
+<h3>Fads <a href="{% url 'fad_create' %}">(+)</a></h3>
+<ul>
+  {% for fad in decade.fads.all %}
+  <li>
+    <a href="{% url 'fad_detail' pk=fad.pk %}">{{ fad.name }}-{{ fad.description }}</a>
+  </li>
+  {% endfor %}
+</ul>
