@@ -1,31 +1,38 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-      <router-view> 
+    <h1 class='header'>Traveler</h1>
+    <Nav />
+    <router-view> 
         
-      </router-view>
-  </div>
+    </router-view>
+  </div> 
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-
+import Nav from './components/Nav.vue'
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    Nav,
+
+    
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  /* color: #2c3e50;   */
+
+}
+.header{
+  background-color: rgba(31, 58, 109, 0.979);
+  /* padding:0;  */
+  margin:0
+}
+Nav{
+  margin: 0
 }
 </style>
