@@ -1,18 +1,11 @@
 <template>
     <div>
         <h1>this is Home</h1>
-
-        <div>
-            <div>
-                <div>
-                    <img :src="this.trips[0].photo_url" :alt="this.trips[0].name" width="500px">
-                </div>
-                <div>
-                    <h3>{{this.trips[0].name}}</h3>
-                </div>
-            </div>
+        <div class='post'>
+            <DestinationPost :trip='trip' :key='trip.id' v-for='trip in trips'/>
+        
         </div>
-    </div> 
+    </div>
     
 </template>
 
@@ -21,15 +14,19 @@
 
 <script>
 import axios from 'axios'
+import DestinationPost from '../components/DestinationoPost.vue'
 
 const BASE_URL = 'http://localhost:8080'
 
 export default {
     name: 'Home',
-    components: {},
+    components: {
+        DestinationPost
+    },
     data: () => ({
         trips: [
-            {id: 1, name: 'Colombia', photo_url: 'https://ivhq.imgix.net/images/hero/volunteer-in-colombia-with-world-leaders-ivhq.jpg?w=945&h=700&fit=crop&crop=faces,top&q=85&auto=format,compress',
+            {id: 1, name: 'Colombia', 
+            photo_url: 'https://ivhq.imgix.net/images/hero/volunteer-in-colombia-with-world-leaders-ivhq.jpg?w=945&h=700&fit=crop&crop=faces,top&q=85&auto=format,compress',
             destinations: {
                 name: 'Bogota',
                 food: 'Chocolate con queso',

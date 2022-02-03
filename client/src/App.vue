@@ -1,8 +1,6 @@
 <template>
   <div id="app">
     <Nav />
-    <DestinationPost />
-    <DestinationDetails />
      <router-view> 
         
       </router-view>
@@ -12,15 +10,11 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import Nav from './components/Nav.vue'
-import DestinationPost from './components/DestinationoPost.vue'
-import DestinationDetails from './components/DestinationDetails.vue'
-
 export default {
   name: 'App',
   components: {
     Nav,
-    DestinationPost,
-    DestinationDetails
+
     
   }
 }
