@@ -92,7 +92,10 @@
         />
         <br />
 
-        <button>Submit</button>
+        <button
+        @click='click'
+        >
+          Submit</button>
       </form>
     </div>
   </div>
@@ -147,6 +150,9 @@ export default {
       await axios.post(`${BASE_URL}/destinations/`, payload);
       this.$router.push('/home')
     },
+    click(){
+      this.$router.push('/home')
+    }
   },
 };
 </script>
