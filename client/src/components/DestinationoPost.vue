@@ -15,9 +15,9 @@ export default{
   methods: {
     selectTheTrip(){
       this.$emit('selectTrip', this.trip.id)
-    }
+    },
+  },
 
-  }
 }
 
 
@@ -27,14 +27,25 @@ export default{
 
 <style >
 h2{
-  margin: 0;
+  font-weight: bold;
+  margin: 20px;
   padding: 0;
+  color: rgb(1, 10, 9);
+}
+img{
+
 }
 .post{
+  display: grid;
+  padding: 50px;
+ 
   max-width: 300px;
   max-height: 380px;
   border-radius: 4px;
-  background-color: #25464b;
+  background-color: rgb(225, 236, 233);
+  border: 3px solid rgb(35, 95, 85);
+  border-radius: 0.9vh;
+
   cursor: pointer;
   transition: all 0.2s;
   color: black 

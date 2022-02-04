@@ -1,11 +1,11 @@
 <template>
   <div class="details">  
-    <h2>{{trip.destinations.name}} </h2> 
+    <h2>{{trip.name}} </h2> 
     <img :src='trip.photo_url' alt="" />
-    <h4>Description: {{trip.destinations.description}} </h4>
-    <h4>Foods: {{trip.destinations.food}}</h4>
-    <h4>landmarks: {{trip.destinations.landmarks}}</h4>
-    <h4>Cost: {{trip.destinations.cost}}</h4>
+    <h4>Description: {{trip.description}} </h4>
+    <h4>Foods: {{trip.food}}</h4>
+    <h4>landmarks: {{trip.landmarks}}</h4>
+    <h4>Cost: {{trip.cost}}</h4>
     <h4>Country: {{trip.name}}</h4>
     <button>Delete</button>
   </div>
@@ -27,7 +27,9 @@ export default {
   /* /* max-width: 300px; // */
   /* max-height: 100%;  */
   border-radius: 4px;
-  background-color: #25464b;
+  margin-top: 60px;
+  font-size: 25px;
+  background-color: white;
   cursor: pointer;
   transition: all 0.2s;
   color: black;
@@ -35,14 +37,21 @@ export default {
   height: 100vh;
 }
 button{
+  font-size: 24px;
   color:cornflowerblue;
-  background-color: antiquewhite;
+  background-color: rgb(227, 255, 249);
+  display: inline-block;
+  border-radius: 1.5vh;
 }
 img{
-  width: 350px;
+  margin: auto;
   justify-content: center;
   padding: 0
 
   
+}
+
+h2{
+  margin-top: 250px;
 }
 </style>

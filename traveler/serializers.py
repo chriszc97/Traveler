@@ -31,4 +31,4 @@ class DestinationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Destination
         fields = ('country_id', 'name', 'photo_url', 'description',
-                  'food', 'landmarks', 'cost', 'country',)
+            'food', 'landmarks', 'cost', 'country',)
