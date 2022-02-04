@@ -31,9 +31,9 @@ export default {
             const response = await axios.get(`${BASE_URL}/destinations/${this.id}`)
             this.trip = response.data
         },
-        async deleteTrip(){
-            const response = await axios.delete(`${BASE_URL}/destinations/${this.id}`)
-        }
+        // async deleteTrip(){
+        //     const response = await axios.delete(`${BASE_URL}/destinations/${this.id}`)
+        // }
     }
 }
 </script>
