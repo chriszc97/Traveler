@@ -191,7 +191,7 @@ button{
   color:cornflowerblue;
   background-color: rgb(234, 255, 245);
   display: inline-block;
-  border-radius: 1.5vh;
+  border-radius: 1.4vh;
 }
 
 
