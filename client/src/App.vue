@@ -24,6 +24,8 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
 #app {
+  font-family: Raleway, sans-serif;
+  font-weight: bold;
   text-align: center;
   font-family: Raleway, sans-serif;
   

@@ -143,9 +143,46 @@ export default {
   },
 };
 </script>
+<<<<<<< HEAD
 <style>
 .textbox {
   font-size: 20px;
 }
 
 </style>
+=======
+
+
+<style scoped>
+h1{
+font-weight: 900;
+font-size:40px;
+}
+
+label{
+  font-size: 30px;
+}
+
+input{
+  font-size: 20px;
+  border-radius: 1vh;
+}
+
+::placeholder{
+  color:rgb(69, 202, 171);
+  font-size: 0.8em;
+  text-align: center;
+}
+
+button{
+  margin-top: 50px;
+  font-size: 24px;
+  color:cornflowerblue;
+  background-color: rgb(234, 255, 245);
+  display: inline-block;
+  border-radius: 1.5vh;
+}
+
+
+</style>
+>>>>>>> c9cc9b1955f6c173bd43fb6eec40cb034fbafb08
