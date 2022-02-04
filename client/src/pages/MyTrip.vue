@@ -98,9 +98,6 @@
   </div>
 </template>
 
-
-
-
 <script>
 import axios from "axios";
 const BASE_URL = "http://localhost:8000";
@@ -148,7 +145,7 @@ export default {
       let payload = this.destination
       e.preventDefault();
       await axios.post(`${BASE_URL}/destinations/`, payload);
-      this.$router.push(`/home`)
+      this.$router.push('/home')
     },
   },
 };
