@@ -1,16 +1,18 @@
 <template>
     <div>
         <h1>My new trips</h1>
-        <div v-if="!country">
-            <form>
+        <div v-if="country">
+            <form @handleSubmit='handleSubmit'>
                 <label> Country </label>
                 <input type="text"
                 name = 'country'
                 :value="country"
                 placeholder="Country to remember"
-                @change="handleCountry"
+                
                 />
-                <button>Submit</button>
+                <button
+                @click="handleCountry"
+                >Submit</button>
             </form>
         </div>
 
@@ -86,7 +88,7 @@ export default {
     data: () => ({
         newCountry: [],
         newDestination: [],
-        country: 'colombi',
+        country: 'Ecuador',
         destination: {
             name: '',
             food: '',
@@ -98,10 +100,10 @@ export default {
         }
     }),
     methods: {
-        handleSubmit(e){
+        async handleSubmit(e,country){
             e.preventDefault()
+            await axios.post(`${BASE_URL}/countries`, country)
 
-            this.added.push(this.destination)
         },
         handleChange(e){
             // console.log(e.target.value)
