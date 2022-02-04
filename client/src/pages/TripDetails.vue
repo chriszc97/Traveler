@@ -1,6 +1,6 @@
 <template>
     <div>
-        <DestinationDetails :trip='trip' :key='trip.id'/>
+        <DestinationDetails :trip='trip' :key='trip.id' v-for='trip in trip'/>
     </div> 
 </template>
 
@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         async getTrip(){
-            const response = await axios.get(`${BASE_URL}/destinations/${this.id}`)
+            const response = await axios.get(`${BASE_URL}/destinations/`)
             this.trip = response.data
         },
         // async deleteTrip(){

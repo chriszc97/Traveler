@@ -1,14 +1,14 @@
 <template>
     <div>
         <h1>My new trips</h1>
-        <div v-if="country">
-            <form @handleSubmit='handleSubmit'>
+        <div v-if="!country">
+            <form @submit='handleSubmit'>
                 <label> Country </label>
                 <input type="text"
                 name = 'country'
                 :value="country"
                 placeholder="Country to remember"
-                
+                @input='handleCountry'
                 />
                 <button
                 @click="handleCountry"
