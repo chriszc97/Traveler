@@ -15,9 +15,9 @@ export default{
   methods: {
     selectTheTrip(){
       this.$emit('selectTrip', this.trip.id)
-    }
+    },
+  },
 
-  }
 }
 
 

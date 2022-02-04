@@ -8,7 +8,7 @@
                 name = 'country'
                 :value="country"
                 placeholder="Country to remember"
-                @input="handleCountry"
+                @change="handleCountry"
                 />
                 <button>Submit</button>
             </form>
@@ -72,6 +72,7 @@
 
 
 <script>
+
 export default {
     name: 'MyTrip',
     props: {
@@ -109,7 +110,7 @@ export default {
             console.log([e.target.value])
         },
         handleSubmitC(e){
-           e.preventDefault()
+        e.preventDefault()
         }
     }
 }
