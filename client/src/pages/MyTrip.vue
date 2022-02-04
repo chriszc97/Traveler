@@ -1,21 +1,29 @@
 <template>
     <div>
         <h1>My new trips</h1>
-        <div v-if="!country">
-            <form @submit="handleSubmitC">
+        <div v-if="!updated">
+            <form  @submit="handleSubmit">
                 <label> Country </label>
                 <input type="text"
-                name = 'country'
-                :value="country"
+                name = 'name'
+                :value="name"
                 placeholder="Country to remember"
-                @change="handleCountry"
-                />
+                @input="handleCountry"
+                /> <br>
+
+                <label> Photo </label>
+                <input type="text"
+                name = 'photo_url'
+                :value="photo_url"
+                placeholder="Photo Url"
+                @input="handleCountry"
+                /> <br>
                 <button>Submit</button>
             </form>
         </div>
 
-        <div v-if="country">
-            <form v-on:submit="handleSubmitC">
+        <div v-if="!updated">
+            <form @submit="handleSubmitC">
                 <label>Name</label> 
                 <input type="text"
                 name='name'
@@ -56,7 +64,7 @@
                 /> <br>
 
                 <label>Cost</label>
-                <input type="number"
+                <input type="text"
                 name='cost'
                 :value="cost"
                 placeholder="How much did I spent"
@@ -83,9 +91,11 @@ export default {
 
     },
     data: () => ({
-        newCountry: [],
-        newDestination: [],
-        country: 'colombi',
+        updated: false,
+        country: {
+            name: '',
+            photo_url: '',
+        },
         destination: {
             name: '',
             food: '',
@@ -96,29 +106,25 @@ export default {
             country: 1
         }
     }),
-    mounted(){
-
-    },
     methods: {
-        handleSubmit(e){
+        async handleSubmit(e,country){
             e.preventDefault()
-
-            this.added.push(this.destination)
+            this.updated = true
+            await axios.post(`${BASE_URL}/countries/`, {
+                country
+            })
         },
         handleChange(e){
-            // console.log(e.target.value)
             this.destination[e.target.name] = e.target.value
         },
         handleCountry(e){
-            this.country = e.target.value
+            this.country[e.target.name] = e.target.value
         },
         async handleSubmitC(e, destination){
             e.preventDefault()
-            await axios.post(`${BASE_URL}/destinations`, {
+            await axios.post(`${BASE_URL}/destinations/`, {
                 destination
             })
-
-
         },
     }
 }
