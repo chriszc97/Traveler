@@ -100,9 +100,13 @@ import axios from "axios";
 const BASE_URL = "http://localhost:8000";
 export default {
   name: "MyTrip",
-  props: {},
+  props: {
+    id: null
+  },
   components: {},
+
   data: () => ({
+    currentCountry: '',
     updated: false,
     country: {
       name: "",
@@ -115,16 +119,18 @@ export default {
       description: "",
       landmarks: "",
       cost: null,
-      country: 1,
+      country_id: null,
     },
   }),
   methods: {
-    async handleSubmit(e, country) {
+    async handleSubmit(e) {
+      let payload = this.country
       e.preventDefault();
-      this.updated = true;
-      await axios.post(`${BASE_URL}/countries/`, {
-        country,
-      });
+      const response = await axios.post(`${BASE_URL}/countries/`, payload)
+      this.currentCountry = response.data
+      this.currentCountry ? this.updated = true : null
+      this.destination.country_id = this.currentCountry.id
+      
     },
     handleChange(e) {
       this.destination[e.target.name] = e.target.value;
@@ -132,11 +138,11 @@ export default {
     handleCountry(e) {
       this.country[e.target.name] = e.target.value;
     },
-    async handleSubmitC(e, destination) {
+    async handleSubmitC(e) {
+      let payload = this.destination
       e.preventDefault();
-      await axios.post(`${BASE_URL}/destinations/`, {
-        destination,
-      });
+      await axios.post(`${BASE_URL}/destinations/`, payload);
+      this.$router.push(`/home`)
     },
   },
 };
