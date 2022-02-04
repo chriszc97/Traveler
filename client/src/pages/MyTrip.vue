@@ -97,10 +97,6 @@
 
 <script>
 import axios from "axios";
-
-axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-axios.defaults.xsrfCookieName = "csrftoken";
-
 const BASE_URL = "http://localhost:8000";
 export default {
   name: "MyTrip",
@@ -139,6 +135,7 @@ export default {
     let payload = this.destination
       e.preventDefault();
       await axios.post(`${BASE_URL}/destinations/`, payload);
+      this.$router.push(`/home`)
     },
   },
 };

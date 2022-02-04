@@ -1,21 +1,36 @@
 <template>
-  <div class="details">  
-    <h2>{{trip.name}} </h2> 
-    <img :src='trip.photo_url' alt="" />
-    <h4>Description: {{trip.description}} </h4>
-    <h4>Foods: {{trip.food}}</h4>
-    <h4>landmarks: {{trip.landmarks}}</h4>
-    <h4>Cost: {{trip.cost}}</h4>
-    <h4>Country: {{trip.name}}</h4>
-    <button>Delete</button>
+  <div class="details" >  
+    <div :key='destination.id' v-for='destination in destination'>
+    <h2>{{destination.name}} </h2> 
+    <img :src='destination.photo_url' alt="" />
+    <h4>Description: {{destination.description}} </h4>
+    <h4>Foods: {{destination.food}}</h4>
+    <h4>landmarks: {{destination.landmarks}}</h4>
+    <h4>Cost: {{destination.cost}}</h4>
+    <h4>Country: {{destination.name}}</h4>
+    <!-- <button @click='deletedestination(destination.id)' >Delete</button> -->
+  </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+const BASE_URL = 'http://localhost:8000'
 export default {
   name: 'DestinationDetails',
-  props: ['trip'],
+  props: ['destination'],
+  mounted(){
+    // this.deletedestination()
+
+  },
   methods:{
+    
+        //     async deletedestination(id){
+        //     const response = await axios.delete(`${BASE_URL}/destinations/${id}`)
+        //     console.log(response)
+            
+        // }
+  
   }
 }
 
