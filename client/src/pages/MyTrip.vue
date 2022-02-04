@@ -1,24 +1,24 @@
 <template>
   <div>
-    <h1>Add a New Trip</h1>
+    <h1>My new trips</h1>
     <div v-if="!updated">
       <form @submit="handleSubmit">
         <label> Country </label>
-        <input class='textbox'
+        <input
           type="text"
           name="name"
           :value="name"
-          placeholder="Type Here"
+          placeholder="Country to remember"
           @input="handleCountry"
         />
         <br />
 
         <label> Photo </label>
-        <input class='textbox'
+        <input
           type="text"
           name="photo_url"
           :value="photo_url"
-          placeholder="URL"
+          placeholder="Photo Url"
           @input="handleCountry"
         />
         <br />
@@ -147,9 +147,37 @@ export default {
   },
 };
 </script>
-<style>
-.textbox {
-  font-size: 20px;
+
+
+<style scoped>
+h1{
+font-weight: 900;
+font-size:40px;
 }
+
+label{
+  font-size: 30px;
+}
+
+input{
+  font-size: 18px;
+  border-radius: 1vh;
+}
+
+::placeholder{
+  color:rgb(69, 202, 171);
+  font-size: 0.8em;
+  text-align: center;
+}
+
+button{
+  margin-top: 50px;
+  font-size: 24px;
+  color:cornflowerblue;
+  background-color: rgb(234, 255, 245);
+  display: inline-block;
+  border-radius: 1.5vh;
+}
+
 
 </style>

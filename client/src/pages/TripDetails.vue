@@ -1,6 +1,6 @@
 <template>
     <div>
-        <DestinationDetails :trip='trip' :key='trip.id' :destination='destination' @deleteDestination='deleteDestinationgi'  />
+        <DestinationDetails :trip='trip' :key='trip.id' :destination='destination' @deleteDestination='deleteDestination'  />
     </div> 
 </template>
 
@@ -37,6 +37,11 @@ export default {
                 this.destination.push(res.data)
             }
         },
+        async deleteDestination(id){
+            const response = await axios.delete(`${BASE_URL}/destinations/${id}`)
+            console.log(response)
+            
+        }
     }
 }
 </script>

@@ -38,8 +38,11 @@ h2{
   margin: 10px;
   font-size: 30px;
   padding: 0;
+  color: rgb(1, 10, 9);
 }
+img{
 
+}
 img{
   max-width: 400px;
   max-height: 480px;
