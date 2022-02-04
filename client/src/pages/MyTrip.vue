@@ -71,7 +71,7 @@
           @input="handleChange"
         />
         <br />
-
+      </div>
         <label>Things To Do</label>
         <input
           type="text"
@@ -91,7 +91,6 @@
           @input="handleChange"
         />
         <br />
-      </div>
 
         <button>Submit</button>
       </form>
@@ -195,7 +194,7 @@ button{
   color:cornflowerblue;
   background-color: rgb(234, 255, 245);
   display: inline-block;
-  border-radius: 1.5vh;
+  border-radius: 1.4vh;
 }
 
 
