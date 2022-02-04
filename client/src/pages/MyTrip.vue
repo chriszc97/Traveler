@@ -2,7 +2,7 @@
     <div>
         <h1>My new trips</h1>
         <div v-if="!country">
-            <form v-on:submit="handleCountry">
+            <form>
                 <label> Country </label>
                 <input type="text"
                 name = 'country'
@@ -13,8 +13,9 @@
                 <button>Submit</button>
             </form>
         </div>
+
         <div v-if="country">
-            <form v-on:submit="handleSubmitC">
+            <form @handleSubmitC="handleSubmitC">
                 <label>Name</label> 
                 <input type="text"
                 name='name'
@@ -73,6 +74,8 @@
 
 <script>
 
+import axios from 'axios'
+const BASE_URL = 'http://localhost:8000'
 export default {
     name: 'MyTrip',
     props: {
@@ -83,7 +86,7 @@ export default {
     data: () => ({
         newCountry: [],
         newDestination: [],
-        country: '',
+        country: 'colombi',
         destination: {
             name: '',
             food: '',
@@ -91,27 +94,29 @@ export default {
             description: '',
             landmarks: '',
             cost: null,
+            country: 1
         }
     }),
-    mounted(){
-
-    },
     methods: {
         handleSubmit(e){
             e.preventDefault()
-            console.log(this.added)
+
             this.added.push(this.destination)
         },
         handleChange(e){
+            // console.log(e.target.value)
             this.destination[e.target.name] = e.target.value
         },
         handleCountry(e){
-            this[e.target.name] = e.target.value
-            console.log([e.target.value])
+            this.country = e.target.value
         },
-        handleSubmitC(e){
-        e.preventDefault()
-        }
+        async handleSubmitC(e, destination){
+            e.preventDefault()
+            await axios.post(`${BASE_URL}/destinations`, {
+                destination
+            })
+        },
+        
     }
 }
 </script>
