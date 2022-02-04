@@ -30,7 +30,7 @@
       <form  @submit="handleSubmitC">
         <div class="dest">
         <label>Name</label>
-    </div>
+    
     
         <input
           type="text"
@@ -40,6 +40,7 @@
           @input="handleChange"
         />
         <br />
+      </div>
 
         <label>Good Eats </label>
         <input
