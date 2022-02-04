@@ -1,8 +1,14 @@
 <template>
+<div>
   <div class="post" @click="selectTheTrip(trip.id)">   
     <h2>{{trip.name}} </h2> 
     <img :src='trip.photo_url' alt="" />
   </div>
+  <div>
+    <button @click="deleteTrip(trip.id)">Delete</button>
+  </div>
+</div>
+
 
 </template>
 
@@ -15,6 +21,9 @@ export default{
     selectTheTrip(){
       this.$emit('selectTrip', this.trip.id)
     },
+    deleteTrip(id){
+      this.$emit('deleteTrip', id)
+    }
   },
 
 }
@@ -31,9 +40,8 @@ h2{
   padding: 0;
   color: rgb(1, 10, 9);
 }
-img{
 
-}
+
 img{
   max-width: 400px;
   max-height: 480px;

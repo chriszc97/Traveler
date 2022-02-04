@@ -31,22 +31,23 @@
         <div class="dest">
         <label>Name</label>
     
+    
         <input
           type="text"
           name="name"
           :value="name"
-          placeholder="Destination's name"
+          placeholder="Name"
           @input="handleChange"
         />
         <br />
-  </div>
-        <label>Food</label>
-     
+      </div>
+
+        <label>Good Eats </label>
         <input
           type="text"
-          name="food"
+          name="Food"
           :value="food"
-          placeholder="Food to remember"
+          placeholder="Food"
           @input="handleChange"
         />
         <br />
@@ -57,13 +58,13 @@
           type="text"
           name="photo_url"
           :value="photo_url"
-          placeholder="Photo url"
+          placeholder="URL"
           @input="handleChange"
         />
         <br />
       <div class="dest">
         <label className="description" >Description</label>
-     
+      
         <textarea
           name="description"
           :value="description"
@@ -71,49 +72,47 @@
         />
         <br />
       </div>
-        <label>Landmarks</label>
-   
+        <label>Things To Do</label>
         <input
           type="text"
           name="landmarks"
           :value="landmarks"
-          placeholder="Landmarks to remember"
+          placeholder="Landmarks, Activities, etc."
           @input="handleChange"
         />
         <br />
 
-        <label>Cost</label>
-       
+        <label>Average Cost</label>
         <input
           type="text"
           name="cost"
           :value="cost"
-          placeholder="How much did I spent"
+          placeholder="$$$"
           @input="handleChange"
         />
         <br />
 
-        <button>Submit</button>
+        <button
+        @click='click'
+        >
+          Submit</button>
       </form>
     </div>
   </div>
 </template>
 
-
-
-
 <script>
 import axios from "axios";
-
-axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-axios.defaults.xsrfCookieName = "csrftoken";
-
 const BASE_URL = "http://localhost:8000";
 export default {
   name: "MyTrip",
-  props: {},
+  props: {
+    id: null
+  },
   components: {},
+
   data: () => ({
+    currentCountry: '',
     updated: false,
     country: {
       name: "",
@@ -126,15 +125,18 @@ export default {
       description: "",
       landmarks: "",
       cost: null,
-      country_id: 1
+      country_id: null,
     },
   }),
   methods: {
     async handleSubmit(e) {
-        let payload = this.country
+      let payload = this.country
       e.preventDefault();
-      this.updated = true;
-      await axios.post(`${BASE_URL}/countries/`, payload);
+      const response = await axios.post(`${BASE_URL}/countries/`, payload)
+      this.currentCountry = response.data
+      this.currentCountry ? this.updated = true : null
+      this.destination.country_id = this.currentCountry.id
+      
     },
     handleChange(e) {
       this.destination[e.target.name] = e.target.value;
@@ -143,10 +145,14 @@ export default {
       this.country[e.target.name] = e.target.value;
     },
     async handleSubmitC(e) {
-    let payload = this.destination
+      let payload = this.destination
       e.preventDefault();
       await axios.post(`${BASE_URL}/destinations/`, payload);
+      this.$router.push('/home')
     },
+    click(){
+      this.$router.push('/home')
+    }
   },
 };
 </script>
@@ -191,7 +197,7 @@ button{
   color:cornflowerblue;
   background-color: rgb(234, 255, 245);
   display: inline-block;
-  border-radius: 1.5vh;
+  border-radius: 1.4vh;
 }
 
 

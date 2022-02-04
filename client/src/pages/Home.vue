@@ -2,9 +2,8 @@
     <div>
         <h1>Explore by Country</h1>
         <div class='post'>
-            <DestinationPost :trip='trip' :key='trip.id' v-for='trip in trips' @selectTrip="selectTrip"/>
-        
-    </div> 
+            <DestinationPost :trip='trip' :key='trip.id' v-for='trip in trips' @selectTrip="selectTrip" @deleteTrip="deleteTrip"/>
+        </div> 
     </div>
     
 </template>
@@ -31,7 +30,6 @@ export default {
     }),
     mounted(){
         this.getTrips()
-        // this.getTrip()
     },
     methods: {
         async getTrips(){
@@ -41,10 +39,10 @@ export default {
         selectTrip(id){
             this.$router.push(`/trip-details/${id}`)
         },
-        // async getTrip(id){
-        //     const response = await axios.get(`${BASE_URL}/destinations/${id}`)
-        //     this.trip = response.data
-        // },
+        async deleteTrip(id){
+            const response = await axios.delete(`${BASE_URL}/countries/${id}`)
+            console.log(response)
+        }
     }
 }
 </script>

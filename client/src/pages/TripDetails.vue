@@ -1,6 +1,6 @@
 <template>
     <div>
-        <DestinationDetails :trip='trip' :key='trip.id' v-for='trip in trip'/>
+        <DestinationDetails :trip='trip' :key='trip.id' :destination='destination' @deleteDestination='deleteDestination'  />
     </div> 
 </template>
 
@@ -22,26 +22,26 @@ export default {
     },
     data: () => ({
         trip: {},
+        destination: []
     }),
     mounted(){
         this.getTrip()
     },
     methods: {
         async getTrip(){
-            const response = await axios.get(`${BASE_URL}/destinations/`)
+            const response = await axios.get(`${BASE_URL}/countries/${this.id}`)
             this.trip = response.data
+            console.log(this.trip)
+            for(let i =0;i<this.trip.destinations.length;i++){
+                let res = await axios.get(`${this.trip.destinations[i]}`)
+                this.destination.push(res.data)
+            }
         },
-        // async deleteTrip(){
-        //     const response = await axios.delete(`${BASE_URL}/destinations/${this.id}`)
+        async deleteDestination(id){
+            const response = await axios.delete(`${BASE_URL}/destinations/${id}`)
+            console.log(response)
             
-        // }
+        }
     }
 }
 </script>
-
-<style scoped>
-    div{
-        height: 100%;
-        bottom: 0
-    }
-</style>
