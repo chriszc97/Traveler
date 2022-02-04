@@ -1,17 +1,11 @@
 <template>
     <div>
-        <h1>this is Home</h1>
-        <div :key="e.id" v-for="e in trips">
-            <div @click="selectTrip(e.id)">
-                <div>
-                    <img :src="e.photo_url" :alt="e.name" width="500px">
-                </div>
-                <div>
-                    <h3>{{e.name}}</h3>
-                </div>
-            </div>
-        </div>
+        <h1>Travel Posts</h1>
+        <div class='post'>
+            <DestinationPost :trip='trip' :key='trip.id' v-for='trip in trips' @selectTrip="selectTrip"/>
+        
     </div> 
+    </div>
     
 </template>
 
@@ -20,16 +14,20 @@
 
 <script>
 import axios from 'axios'
+import DestinationPost from '../components/DestinationoPost.vue'
 
 const BASE_URL = 'http://localhost:8080'
 
 
 export default {
     name: 'Home',
-    components: {},
+    components: {
+        DestinationPost
+    },
     data: () => ({
         trips: [
-            {id: 1, name: 'Colombia', photo_url: 'https://ivhq.imgix.net/images/hero/volunteer-in-colombia-with-world-leaders-ivhq.jpg?w=945&h=700&fit=crop&crop=faces,top&q=85&auto=format,compress',
+            {id: 1, name: 'Colombia', 
+            photo_url: 'https://ivhq.imgix.net/images/hero/volunteer-in-colombia-with-world-leaders-ivhq.jpg?w=945&h=700&fit=crop&crop=faces,top&q=85&auto=format,compress',
             destinations: {
                 name: 'Bogota',
                 food: 'Chocolate con queso',
