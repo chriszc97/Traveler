@@ -119,16 +119,15 @@ export default {
       description: "",
       landmarks: "",
       cost: null,
-      country: 1,
+      country_id: 1
     },
   }),
   methods: {
-    async handleSubmit(e, country) {
+    async handleSubmit(e) {
+        let payload = this.country
       e.preventDefault();
-    //   this.updated = true;
-      await axios.post(`${BASE_URL}/countries/`, {
-        country,
-    });
+      this.updated = true;
+      await axios.post(`${BASE_URL}/countries/`, payload);
     },
     handleChange(e) {
       this.destination[e.target.name] = e.target.value;
@@ -136,18 +135,10 @@ export default {
     handleCountry(e) {
       this.country[e.target.name] = e.target.value;
     },
-    async handleSubmitC(e, destination) {
+    async handleSubmitC(e) {
+    let payload = this.destination
       e.preventDefault();
-      await axios.post(`${BASE_URL}/destinations/`, {
-        destination,
-      }, 
-      {
-    headers: {
-      'Content-Type': 'destinations/json',
-      "Access-Control-Allow-Origin": "*",
-  }
-      }
-      );
+      await axios.post(`${BASE_URL}/destinations/`, payload);
     },
   },
 };
