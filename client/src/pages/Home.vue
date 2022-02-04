@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Travel Posts</h1>
+        <h1>Explore by Country</h1>
         <div class='post'>
             <DestinationPost :trip='trip' :key='trip.id' v-for='trip in trips' @selectTrip="selectTrip" @deleteTrip="deleteTrip"/>
         </div> 
@@ -46,3 +46,18 @@ export default {
     }
 }
 </script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
+
+h1 {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+.post {
+  display: grid;
+  gap: 20px;
+  grid-row: 1/3;
+  background-color:white
+}
+
+</style>

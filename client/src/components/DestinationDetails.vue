@@ -9,7 +9,16 @@
     <h4>Cost: {{destination.cost}}</h4>
     <h4>Country: {{destination.name}}</h4>
     <button @click='deleteDestination(trip.destinations.id)' >Delete</button>
+  <!-- <div class="details">  
+    <h2>{{trip.name}} </h2> 
+    <img :src='trip.photo_url' alt="" />
+    <h4>Description: {{trip.description}} </h4>
+    <h4>Good Eats: {{trip.food}}</h4>
+    <h4>Landmarks, Activities, Attractions, etc.: {{trip.landmarks}}</h4>
+    <h4>Average Cost of Trip: {{trip.cost}}</h4>
+    <h4>Country: {{trip.name}}</h4>
     <button>Delete</button>
+  </div> -->
   </div>
   </div>
 </template>

@@ -10,7 +10,6 @@ class Country(models.Model):
         return self.name
 
 class Destination(models.Model):
-
     name = models.CharField(max_length=100)
     photo_url = models.TextField()
     description = models.TextField()

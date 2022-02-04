@@ -1,24 +1,24 @@
 <template>
   <div>
-    <h1>My new trips</h1>
+    <h1>Add a New Trip</h1>
     <div v-if="!updated">
       <form @submit="handleSubmit">
         <label> Country </label>
-        <input
+        <input class='textbox'
           type="text"
           name="name"
           :value="name"
-          placeholder="Country to remember"
+          placeholder="Type Here"
           @input="handleCountry"
         />
         <br />
 
         <label> Photo </label>
-        <input
+        <input class='textbox'
           type="text"
           name="photo_url"
           :value="photo_url"
-          placeholder="Photo Url"
+          placeholder="URL"
           @input="handleCountry"
         />
         <br />
@@ -147,3 +147,9 @@ export default {
   },
 };
 </script>
+<style>
+.textbox {
+  font-size: 20px;
+}
+
+</style>
