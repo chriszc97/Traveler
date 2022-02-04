@@ -33,6 +33,7 @@ export default {
         },
         // async deleteTrip(){
         //     const response = await axios.delete(`${BASE_URL}/destinations/${this.id}`)
+            
         // }
     }
 }
