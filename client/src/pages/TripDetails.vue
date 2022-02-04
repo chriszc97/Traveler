@@ -37,11 +37,14 @@ export default {
                 this.destination.push(res.data)
             }
         },
+<<<<<<< HEAD
         async deleteDestination(id){
             const response = await axios.delete(`${BASE_URL}/destinations/${id}`)
             console.log(response)
             
         }
+=======
+>>>>>>> origin/merged
     }
 }
 </script>
