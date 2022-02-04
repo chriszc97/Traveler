@@ -1,10 +1,11 @@
-# Traveler App
+# Traveler: A Hackathon Project
 
 ## About 
 Users can read others' travel journeys in addition to being able to upload and delete posts detailing their own experiences! Posts are organized by country and destination within that country. 
 
 ## Technologies Used
 - Django
+  - REST API
 - Postgres
 - Vue
 
