@@ -156,7 +156,7 @@ label{
 }
 
 input{
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 1vh;
 }
 
