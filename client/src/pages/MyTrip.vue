@@ -27,8 +27,10 @@
     </div>
 
     <div v-if="updated">
-      <form @submit="handleSubmitC">
+      <form  @submit="handleSubmitC">
+        <div class="dest">
         <label>Name</label>
+    
         <input
           type="text"
           name="name"
@@ -37,8 +39,9 @@
           @input="handleChange"
         />
         <br />
-
+  </div>
         <label>Food</label>
+     
         <input
           type="text"
           name="food"
@@ -49,6 +52,7 @@
         <br />
 
         <label>Photo</label>
+      
         <input
           type="text"
           name="photo_url"
@@ -57,16 +61,18 @@
           @input="handleChange"
         />
         <br />
-
-        <label>Description</label>
+      <div class="dest">
+        <label className="description" >Description</label>
+     
         <textarea
           name="description"
           :value="description"
           @input="handleChange"
         />
         <br />
-
+      </div>
         <label>Landmarks</label>
+   
         <input
           type="text"
           name="landmarks"
@@ -77,6 +83,7 @@
         <br />
 
         <label>Cost</label>
+       
         <input
           type="text"
           name="cost"
@@ -157,6 +164,9 @@ font-size:40px;
 
 label{
   font-size: 30px;
+  padding: 20px;
+  
+  
 }
 
 input{
@@ -169,6 +179,15 @@ input{
   font-size: 0.8em;
   text-align: center;
 }
+
+.dest{
+  display: flex;
+  /* flex-direction: column; */
+  justify-content:center;
+  align-items: center;
+}
+
+
 
 button{
   margin-top: 50px;
