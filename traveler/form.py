@@ -1,4 +1,3 @@
-# tunr/forms.py
 from django import forms
 from .models import Country, Destination
 
