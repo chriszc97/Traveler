@@ -1,6 +1,6 @@
 <template>
     <div>
-        <DestinationDetails :trip='trip' :key='trip.id' :destination='destination' />
+        <DestinationDetails :trip='trip' :key='trip.id' :destination='destination' @deleteDestination='deleteDestination'  />
     </div> 
 </template>
 
@@ -33,16 +33,15 @@ export default {
             this.trip = response.data
             console.log(this.trip)
             for(let i =0;i<this.trip.destinations.length;i++){
-                console.log(i)
                 let res = await axios.get(`${this.trip.destinations[i]}`)
                 this.destination.push(res.data)
             }
         },
-        // async deleteTrip(){
-        //     const response = await axios.delete(`${BASE_URL}/destinations/${this.id}`)
-        //     console.log(response)
+        async deleteDestination(id){
+            const response = await axios.delete(`${BASE_URL}/destinations/${id}`)
+            console.log(response)
             
-        // }
+        }
     }
 }
 </script>

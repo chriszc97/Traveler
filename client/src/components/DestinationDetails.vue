@@ -8,32 +8,28 @@
     <h4>landmarks: {{destination.landmarks}}</h4>
     <h4>Cost: {{destination.cost}}</h4>
     <h4>Country: {{destination.name}}</h4>
-    <!-- <button @click='deletedestination(destination.id)' >Delete</button> -->
+    <button @click='deleteDestination(trip.destinations.id)' >Delete</button>
   </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-const BASE_URL = 'http://localhost:8000'
+
 export default {
   name: 'DestinationDetails',
-  props: ['destination'],
+  props: ['destination','trip'],
   mounted(){
-    // this.deletedestination()
 
   },
   methods:{
-    
-        //     async deletedestination(id){
-        //     const response = await axios.delete(`${BASE_URL}/destinations/${id}`)
-        //     console.log(response)
-            
-        // }
+    deleteDestination(id){
+      console.log(id)
+      this.$emit('deleteDestination', id)
+    }
+
   
   }
 }
-
 
 </script>
 
