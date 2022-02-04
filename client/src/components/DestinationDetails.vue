@@ -2,11 +2,11 @@
   <div class="details">  
     <h2>{{trip.name}} </h2> 
     <img :src='trip.photo_url' alt="" />
-    <h4>Description: {{trip.description}} </h4>
+    <h4>{{trip.description}} </h4>
     <h4>Good Eats: {{trip.food}}</h4>
-    <h4>Landmarks, Activities, Attractions, etc.: {{trip.landmarks}}</h4>
+    <h4>Things To Do: {{trip.landmarks}}</h4>
     <h4>Average Cost of Trip: {{trip.cost}}</h4>
-    <h4>Country: {{trip.name}}</h4>
+    
     <button>Delete</button>
   </div>
 </template>
@@ -24,11 +24,7 @@ export default {
 
 <style scoped>
 .details{
-  /* /* max-width: 300px; // */
-  /* max-height: 100%;  */
-  border-radius: 4px;
-  margin-top: 60px;
-  font-size: 25px;
+  font-size: 20px;
   background-color: white;
   cursor: pointer;
   transition: all 0.2s;
@@ -38,7 +34,6 @@ export default {
 }
 button{
   font-size: 24px;
-  color:cornflowerblue;
   background-color: rgb(227, 255, 249);
   display: inline-block;
   border-radius: 1.5vh;
@@ -48,10 +43,9 @@ img{
   justify-content: center;
   padding: 0
 
-  
 }
 
 h2{
-  margin-top: 250px;
+  margin-top: 25px;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class='destination'>
         <DestinationDetails :trip='trip' :key='trip.id' v-for='trip in trip'/>
     </div> 
 </template>
@@ -38,10 +38,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-    div{
-        height: 100%;
-        bottom: 0
-    }
-</style>

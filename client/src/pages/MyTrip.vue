@@ -28,22 +28,22 @@
 
     <div v-if="updated">
       <form @submit="handleSubmitC">
-        <label>Name</label>
+        <label>Destination</label>
         <input
           type="text"
           name="name"
           :value="name"
-          placeholder="Destination's name"
+          placeholder="Name"
           @input="handleChange"
         />
         <br />
 
-        <label>Food</label>
+        <label>Good Eats </label>
         <input
           type="text"
-          name="food"
+          name="Food"
           :value="food"
-          placeholder="Food to remember"
+          placeholder="Food"
           @input="handleChange"
         />
         <br />
@@ -53,7 +53,7 @@
           type="text"
           name="photo_url"
           :value="photo_url"
-          placeholder="Photo url"
+          placeholder="URL"
           @input="handleChange"
         />
         <br />
@@ -66,22 +66,22 @@
         />
         <br />
 
-        <label>Landmarks</label>
+        <label>Things To Do</label>
         <input
           type="text"
           name="landmarks"
           :value="landmarks"
-          placeholder="Landmarks to remember"
+          placeholder="Landmarks, Activities, etc."
           @input="handleChange"
         />
         <br />
 
-        <label>Cost</label>
+        <label>Average Cost</label>
         <input
           type="text"
           name="cost"
           :value="cost"
-          placeholder="How much did I spent"
+          placeholder="$$$"
           @input="handleChange"
         />
         <br />
@@ -143,46 +143,3 @@ export default {
   },
 };
 </script>
-<<<<<<< HEAD
-<style>
-.textbox {
-  font-size: 20px;
-}
-
-</style>
-=======
-
-
-<style scoped>
-h1{
-font-weight: 900;
-font-size:40px;
-}
-
-label{
-  font-size: 30px;
-}
-
-input{
-  font-size: 20px;
-  border-radius: 1vh;
-}
-
-::placeholder{
-  color:rgb(69, 202, 171);
-  font-size: 0.8em;
-  text-align: center;
-}
-
-button{
-  margin-top: 50px;
-  font-size: 24px;
-  color:cornflowerblue;
-  background-color: rgb(234, 255, 245);
-  display: inline-block;
-  border-radius: 1.5vh;
-}
-
-
-</style>
->>>>>>> c9cc9b1955f6c173bd43fb6eec40cb034fbafb08

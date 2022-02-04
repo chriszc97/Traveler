@@ -16,16 +16,11 @@ export default{
   .nav{
     display: flex;
     font-size:30px;
-    font-weight: bold;
     justify-content: space-evenly;
     gap: 10px;
-    margin: 20px 0 0 ;
-    padding: 10px 0;
+    padding: 10px;
     background-color: rgb(118, 177, 164);
-    border:0;
-    margin: 0;
     border-radius: 2vh;
-    /* font-color: black */
   }
 
    .nav:hover{
