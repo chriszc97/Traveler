@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+  <head>
+    <title>Traveler</title>
+    <link rel="stylesheet" href="{% static 'css/traveler.css' %}" />
+  </head>
+  <body>
+    <h1>Traveler</h1>
+    <nav>
+      <a href="/destinations">Destinations</a>
+      <a href="/">Countries</a>
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>
