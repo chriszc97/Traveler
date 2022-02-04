@@ -22,17 +22,20 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
 #app {
   text-align: center;
-  /* color: #2c3e50;   */
-
+  font-family: Raleway, sans-serif;
+  
 }
 .header{
-  background-color: rgba(31, 58, 109, 0.979);
-  /* padding:0;  */
-  margin:0
+ margin:70px;
+ font-size: 70px;
+ font-weight: 100px;
+
 }
 Nav{
   margin: 0
+  
 }
 </style>

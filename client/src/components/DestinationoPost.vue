@@ -1,8 +1,7 @@
 <template>
   <div class="post" @click="selectTheTrip(trip.id)">   
-    <h2>Name:{{trip.name}} </h2> 
+    <h2>{{trip.name}} </h2> 
     <img :src='trip.photo_url' alt="" />
-    <h3>Location: {{trip.destinations.name}}</h3>
   </div>
 
 </template>
@@ -27,21 +26,14 @@ export default{
 
 <style >
 h2{
-  margin: 0;
+  margin: 10px;
+  font-size: 30px;
   padding: 0;
 }
-.post{
-  max-width: 300px;
-  max-height: 380px;
-  border-radius: 4px;
-  background-color: #25464b;
-  cursor: pointer;
-  transition: all 0.2s;
-  color: black 
-}
+
 img{
-    max-width: 300px;
-  max-height: 380px;
+  max-width: 400px;
+  max-height: 480px;
   margin: auto;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding:  0;
