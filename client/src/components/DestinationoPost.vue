@@ -40,9 +40,8 @@ h2{
   padding: 0;
   color: rgb(1, 10, 9);
 }
-img{
 
-}
+
 img{
   max-width: 400px;
   max-height: 480px;

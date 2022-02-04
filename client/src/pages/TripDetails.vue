@@ -45,10 +45,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-    div{
-        height: 100%;
-        bottom: 0
-    }
-</style>

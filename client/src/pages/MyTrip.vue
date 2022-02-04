@@ -30,23 +30,23 @@
       <form  @submit="handleSubmitC">
         <div class="dest">
         <label>Name</label>
+    </div>
     
         <input
           type="text"
           name="name"
           :value="name"
-          placeholder="Destination's name"
+          placeholder="Name"
           @input="handleChange"
         />
         <br />
-  </div>
-        <label>Food</label>
-     
+
+        <label>Good Eats </label>
         <input
           type="text"
-          name="food"
+          name="Food"
           :value="food"
-          placeholder="Food to remember"
+          placeholder="Food"
           @input="handleChange"
         />
         <br />
@@ -57,41 +57,40 @@
           type="text"
           name="photo_url"
           :value="photo_url"
-          placeholder="Photo url"
+          placeholder="URL"
           @input="handleChange"
         />
         <br />
       <div class="dest">
         <label className="description" >Description</label>
-     
+      
         <textarea
           name="description"
           :value="description"
           @input="handleChange"
         />
         <br />
-      </div>
-        <label>Landmarks</label>
-   
+
+        <label>Things To Do</label>
         <input
           type="text"
           name="landmarks"
           :value="landmarks"
-          placeholder="Landmarks to remember"
+          placeholder="Landmarks, Activities, etc."
           @input="handleChange"
         />
         <br />
 
-        <label>Cost</label>
-       
+        <label>Average Cost</label>
         <input
           type="text"
           name="cost"
           :value="cost"
-          placeholder="How much did I spent"
+          placeholder="$$$"
           @input="handleChange"
         />
         <br />
+      </div>
 
         <button>Submit</button>
       </form>
