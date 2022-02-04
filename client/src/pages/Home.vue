@@ -26,19 +26,25 @@ export default {
     },
     data: () => ({
         trips: [],
+        trip: {}
 
     }),
     mounted(){
         this.getTrips()
+        // this.getTrip()
     },
     methods: {
         async getTrips(){
-            const response = await axios.get(`${BASE_URL}/countries/?format=json`)
+            const response = await axios.get(`${BASE_URL}/countries`)
             this.trips = response.data
         },
         selectTrip(id){
             this.$router.push(`/trip-details/${id}`)
-        }
+        },
+        // async getTrip(id){
+        //     const response = await axios.get(`${BASE_URL}/destinations/${id}`)
+        //     this.trip = response.data
+        // },
     }
 }
 </script>
