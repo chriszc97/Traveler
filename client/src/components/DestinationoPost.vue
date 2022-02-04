@@ -1,9 +1,15 @@
 <template>
+<div>
   <div class="post" @click="selectTheTrip(trip.id)">   
     <h2>Name:{{trip.name}} </h2> 
     <img :src='trip.photo_url' alt="" />
     <h3>Location: {{trip.destinations.name}}</h3>
   </div>
+  <div>
+    <button @click="deleteTrip(trip.id)">Delete</button>
+  </div>
+</div>
+
 
 </template>
 
@@ -16,6 +22,9 @@ export default{
     selectTheTrip(){
       this.$emit('selectTrip', this.trip.id)
     },
+    deleteTrip(id){
+      this.$emit('deleteTrip', id)
+    }
   },
 
 }
