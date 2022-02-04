@@ -8,20 +8,14 @@
     <h4>landmarks: {{destination.landmarks}}</h4>
     <h4>Cost: {{destination.cost}}</h4>
     <h4>Country: {{destination.name}}</h4>
-<<<<<<< HEAD
     <button @click='deleteDestination(trip.destinations.id)' >Delete</button>
-=======
     <button>Delete</button>
->>>>>>> origin/merged
   </div>
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/merged
 export default {
   name: 'DestinationDetails',
   props: ['destination','trip'],
@@ -29,15 +23,12 @@ export default {
 
   },
   methods:{
-<<<<<<< HEAD
     deleteDestination(id){
       console.log(id)
       this.$emit('deleteDestination', id)
     }
 
   
-=======
->>>>>>> origin/merged
   }
 }
 

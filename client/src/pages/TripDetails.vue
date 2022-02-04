@@ -1,6 +1,6 @@
 <template>
     <div>
-        <DestinationDetails :trip='trip' :key='trip.id' :destination='destination' @deleteDestination='deleteDestination'  />
+        <DestinationDetails :trip='trip' :key='trip.id' :destination='destination' @deleteDestination='deleteDestinationgi'  />
     </div> 
 </template>
 
@@ -37,14 +37,6 @@ export default {
                 this.destination.push(res.data)
             }
         },
-<<<<<<< HEAD
-        async deleteDestination(id){
-            const response = await axios.delete(`${BASE_URL}/destinations/${id}`)
-            console.log(response)
-            
-        }
-=======
->>>>>>> origin/merged
     }
 }
 </script>
